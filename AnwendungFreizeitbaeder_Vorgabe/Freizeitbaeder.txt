@@ -1,0 +1,25 @@
+Daten des Freizeitbades
+Name des Freizeitbads:              fhyf
+öffnungszeit des Freizeitbads:      8.0-22.0
+Becklänge des Freizeitsbad:         20
+Wassertemperatur des Freizeitsbad:         20
+Daten des Freizeitbades
+Name des Freizeitbads:              jgcg
+öffnungszeit des Freizeitbads:      8.0-20.0
+Becklänge des Freizeitsbad:         51
+Wassertemperatur des Freizeitsbad:         1
+jkDaten des Freizeitbades
+Name des Freizeitbads:              cggv
+öffnungszeit des Freizeitbads:      8.0-20.0
+Becklänge des Freizeitsbad:         52
+Wassertemperatur des Freizeitsbad:         1
+Daten des Freizeitbades
+Name des Freizeitbads:              cggv
+öffnungszeit des Freizeitbads:      8.0-20.0
+Becklänge des Freizeitsbad:         52
+Wassertemperatur des Freizeitsbad:         1
+Daten des Freizeitbades
+Name des Freizeitbads:              jk
+öffnungszeit des Freizeitbads:      8.0-20.0
+Becklänge des Freizeitsbad:         52
+Wassertemperatur des Freizeitsbad:         10

@@ -20,7 +20,11 @@ public class FreizeitbaederControl {
 		try {
 			if("csv".equals(typ)) {
 				model.schreibeFreizeitbaederInCsvDatei();
-				view.zeigeInformationsfensterAn("Die Freizeitbäder wurden gespeichert!");
+				view.zeigeInformationsfensterAn("Die CsvFreizeitbäder wurden gespeichert!");
+			}
+			else if ("txt".equals(typ)) {
+				model.schreibeFreizeitbaederInTxtDatei();
+				view.zeigeInformationsfensterAn("Die TxtFreizeitbäder wurden gespeichert!");
 			}
 			else {
 				view.zeigeInformationsfensterAn("noch nicht implementiert");
@@ -33,6 +37,12 @@ public class FreizeitbaederControl {
 		catch(Exception exc) {
 			view.zeigeFehlermeldungsfensterAn("Speichungsfehler", "Unbekannter Fehler beim Speichern!");
 		}
+		
+		
+		
 	}
+	
+	
+	
 
 }

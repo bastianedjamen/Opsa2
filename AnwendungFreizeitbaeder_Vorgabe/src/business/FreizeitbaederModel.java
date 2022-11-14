@@ -1,7 +1,12 @@
 package business;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+
+
+
+import fabrik.ConcreteCreator;
+import fabrik.ConcreteTxtCreator;
+import fabrik.Creator;
+import fabrik.Product;
 
 public class FreizeitbaederModel {
 	   // speichert temporaer ein Objekt vom Typ Freizeitbad
@@ -20,9 +25,17 @@ public class FreizeitbaederModel {
 	
 	
 	public void schreibeFreizeitbaederInCsvDatei() throws Exception {
-		BufferedWriter aus = new BufferedWriter(new FileWriter("Freizeitbaeder.csv",true));
-		aus.write(this.getFreizeitbad().gibFreizeitbadZurueck(';'));
-		aus.close();
+		Creator creatorwriter = new ConcreteCreator();
+		Product writer = creatorwriter.factorymethod();
+		writer.fuegeInDateiHinzu(this.freizeitbad);
+		writer.schlieﬂeDatei();
+	}
+	
+	public void schreibeFreizeitbaederInTxtDatei() throws Exception {
+		Creator creatorwriter = new ConcreteTxtCreator();
+		Product writer = creatorwriter.factorymethod();
+		writer.fuegeInDateiHinzu(this.freizeitbad);
+     	writer.schlieﬂeDatei();
 	}
 	
 	public Freizeitbad getFreizeitbad() {

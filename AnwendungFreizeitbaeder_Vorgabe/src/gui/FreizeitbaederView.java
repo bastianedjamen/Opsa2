@@ -15,7 +15,7 @@ public class FreizeitbaederView {
 	
 	private FreizeitbaederControl control;
 	private FreizeitbaederModel model;
- private Freizeitbad freizeitbad;
+ 
 	  
     //---Anfang Attribute der grafischen Oberflaeche---
     private Pane pane     				= new  Pane();
