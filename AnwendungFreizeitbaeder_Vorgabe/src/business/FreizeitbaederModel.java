@@ -3,20 +3,31 @@ package business;
 
 
 
+import java.util.Vector;
+
 import fabrik.ConcreteCreator;
 import fabrik.ConcreteTxtCreator;
 import fabrik.Creator;
 import fabrik.Product;
+import obs.Observable;
+import obs.Observer;
 
-public class FreizeitbaederModel {
+public class FreizeitbaederModel implements Observable {
 	   // speichert temporaer ein Objekt vom Typ Freizeitbad
     private Freizeitbad freizeitbad;
-	
-	
+	private static FreizeitbaederModel theinstance;
+	private Vector<Observer> observers = new Vector<Observer>();
 	
 
-	public FreizeitbaederModel() {
+	private FreizeitbaederModel() {
 		
+	}
+	
+	public static FreizeitbaederModel getTheinstance() {
+		if(theinstance==null) {
+			theinstance = new FreizeitbaederModel();
+		}
+		return theinstance;
 	}
 	
 	public String getueberschrift() {
@@ -45,6 +56,26 @@ public class FreizeitbaederModel {
 
 	public void setFreizeitbad(Freizeitbad freizeitbad) {
 		this.freizeitbad = freizeitbad;
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		observers.add(obs);
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		observers.remove(obs);
+		
+	}
+
+	@Override
+	public void notifyObserver() {
+		for(int i=0; i< observers.size();i++) {
+			observers.elementAt(i).update();
+		}
+		
 	}
 
 	

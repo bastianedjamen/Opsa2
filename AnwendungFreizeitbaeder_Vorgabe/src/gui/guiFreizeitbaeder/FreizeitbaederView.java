@@ -1,6 +1,6 @@
-package gui;
+package gui.guiFreizeitbaeder;
    
-import business.Freizeitbad;
+//import business.Freizeitbad;
 import business.FreizeitbaederModel;
 import javafx.event.*;
 import javafx.scene.Scene;
@@ -173,7 +173,7 @@ public class FreizeitbaederView {
     // 	}
    // }
    
-    private void zeigeFreizeitbaederAn(){
+    public void zeigeFreizeitbaederAn(){
     	if(model.getFreizeitbad() != null){
     		txtAnzeige.setText(
     			model.getFreizeitbad().gibFreizeitbadZurueck(' '));

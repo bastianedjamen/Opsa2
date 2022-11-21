@@ -1,26 +1,30 @@
-package gui;
+package gui.guiFreizeitbaeder;
 
 import java.io.IOException;
 
+import business.Freizeitbad;
 import business.FreizeitbaederModel;
 import javafx.stage.Stage;
+import obs.Observer;
+import ownUtil.PlausiException;
 
-public class FreizeitbaederControl {
+public class FreizeitbaederControl implements Observer {
 	private FreizeitbaederModel model;
 	private FreizeitbaederView view;
 	
 	
 	public FreizeitbaederControl(Stage primarystage) {
-		this.model = new FreizeitbaederModel();
+		this.model =  FreizeitbaederModel.getTheinstance();
 		this.view = new FreizeitbaederView(this , primarystage , model);
+		model.addObserver(this);
 		
 	}
 	public void nehmeFreizeitbadAuf(String name, String von, String bis, String laenge, String temperatur)
     {
     	try{
     		model.setFreizeitbad(new Freizeitbad(name, von, bis, laenge, temperatur));
-
-    		view.zeigeInformationsfensterAn("Das Freizeitbad wurde aufgenommen!");
+            model.notifyObserver();
+//    		view.zeigeInformationsfensterAn("Das Freizeitbad wurde aufgenommen!");
        	}
        	catch(PlausiException exc){
        		view.zeigeFehlermeldungsfensterAn(exc.getPlausiTyp() + "er ", exc.getMessage());
@@ -50,6 +54,11 @@ public class FreizeitbaederControl {
 		}
 		
 		
+		
+	}
+	@Override
+	public void update() {
+		view.zeigeFreizeitbaederAn();
 		
 	}
 	
