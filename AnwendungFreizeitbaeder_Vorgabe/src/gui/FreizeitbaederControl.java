@@ -15,16 +15,27 @@ public class FreizeitbaederControl {
 		this.view = new FreizeitbaederView(this , primarystage , model);
 		
 	}
+	public void nehmeFreizeitbadAuf(String name, String von, String bis, String laenge, String temperatur)
+    {
+    	try{
+    		model.setFreizeitbad(new Freizeitbad(name, von, bis, laenge, temperatur));
+
+    		view.zeigeInformationsfensterAn("Das Freizeitbad wurde aufgenommen!");
+       	}
+       	catch(PlausiException exc){
+       		view.zeigeFehlermeldungsfensterAn(exc.getPlausiTyp() + "er ", exc.getMessage());
+     	}
+    }
 	
 	void schreibeFreizeitbaederInDatei(String typ)  {
 		try {
 			if("csv".equals(typ)) {
 				model.schreibeFreizeitbaederInCsvDatei();
-				view.zeigeInformationsfensterAn("Die CsvFreizeitb‰der wurden gespeichert!");
+				view.zeigeInformationsfensterAn("Die CsvFreizeitb√§der wurden gespeichert!");
 			}
 			else if ("txt".equals(typ)) {
 				model.schreibeFreizeitbaederInTxtDatei();
-				view.zeigeInformationsfensterAn("Die TxtFreizeitb‰der wurden gespeichert!");
+				view.zeigeInformationsfensterAn("Die TxtFreizeitb√§der wurden gespeichert!");
 			}
 			else {
 				view.zeigeInformationsfensterAn("noch nicht implementiert");
