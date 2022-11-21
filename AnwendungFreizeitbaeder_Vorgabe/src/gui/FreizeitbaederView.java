@@ -157,21 +157,21 @@ public class FreizeitbaederView {
    	   
    }
     
-    private void nehmeFreizeitbadAuf(){
-    	try{
+   // private void nehmeFreizeitbadAuf(){
+   // 	try{
     		
-    		model.setFreizeitbad (new Freizeitbad(
-    			txtName.getText(), 
-   	            txtGeoeffnetVon.getText(),
-   	            txtGeoeffnetBis.getText(),
-    		    txtBeckenlaenge.getText(),
-    		    txtWassTemperatur.getText()));
-    		zeigeInformationsfensterAn("Das Freizeitbad wurde aufgenommen!");
-       	}
-       	catch(PlausiException exc){
-       		zeigeFehlermeldungsfensterAn(exc.getPlausiTyp() + "er ", exc.getMessage());
-     	}
-    }
+    //		model.setFreizeitbad (new Freizeitbad(
+    	//		txtName.getText(), 
+   	//            txtGeoeffnetVon.getText(),
+   	  //          txtGeoeffnetBis.getText(),
+    	//	    txtBeckenlaenge.getText(),
+    	//	    txtWassTemperatur.getText()));
+    	//	zeigeInformationsfensterAn("Das Freizeitbad wurde aufgenommen!");
+       //	}
+      // 	catch(PlausiException exc){
+      // 		zeigeFehlermeldungsfensterAn(exc.getPlausiTyp() + "er ", exc.getMessage());
+    // 	}
+   // }
    
     private void zeigeFreizeitbaederAn(){
     	if(model.getFreizeitbad() != null){
