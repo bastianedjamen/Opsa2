@@ -22,9 +22,9 @@ public class FreizeitbaederView {
     private Label lblEingabe    	 	= new Label("Eingabe");
     private Label lblAnzeige   	 	    = new Label("Anzeige");
     private Label lblName 				= new Label("Name:");
-    private Label lblGeoeffnetVon   	= new Label("Geöffnet von:");
-    private Label lblGeoeffnetBis  	 	= new Label("Geöffnet bis:");
-    private Label lblBeckenlaenge   	= new Label("Beckenlänge:");
+    private Label lblGeoeffnetVon   	= new Label("GeÃ¶ffnet von:");
+    private Label lblGeoeffnetBis  	 	= new Label("GeÃ¶ffnet bis:");
+    private Label lblBeckenlaenge   	= new Label("BeckenlÃ¤nge:");
     private Label lblWassTemperatur  	= new Label("Wassertemperatur:");
     private TextField txtName 	 		= new TextField();
     private TextField txtGeoeffnetVon	= new TextField();
@@ -119,7 +119,8 @@ public class FreizeitbaederView {
 	    btnEingabe.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-        	   nehmeFreizeitbadAuf();
+        	   control.nehmeFreizeitbadAuf(txtName.getText(), txtGeoeffnetVon.getText(), txtGeoeffnetBis.getText(), txtBeckenlaenge.getText(),
+        			   txtWassTemperatur.getText());
             }
 	    });
 	    btnAnzeige.setOnAction(new EventHandler<ActionEvent>() {
